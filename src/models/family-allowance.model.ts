@@ -14,7 +14,11 @@ export enum FamilyAllowanceStatusFilter {
     Denied = 'Denied'
 }
 
-export const mapFilterStatus = (status: FamilyAllowanceStatusFilter): FamilyAllowanceStatus | undefined => {
+export const mapFilterStatus = (status?: FamilyAllowanceStatusFilter): FamilyAllowanceStatus | undefined => {
+    if (!status) {
+        return
+    }
+
     switch (status) {
         case FamilyAllowanceStatusFilter.Approved:
             return FamilyAllowanceStatus.Approved
