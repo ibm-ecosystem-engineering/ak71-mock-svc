@@ -5,10 +5,10 @@ import * as console from "console";
 
 let familyAllowanceCases: FamilyAllowanceModel[] = [{
     id: '1',
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: 'Sean',
+    lastName: 'Sundberg',
     status: FamilyAllowanceStatus.Pending,
-    type: FamilyAllowanceType.Birth,
+    type: FamilyAllowanceType.Adoption,
 }];
 let nextId = 2;
 
