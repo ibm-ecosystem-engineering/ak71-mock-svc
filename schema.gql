@@ -2,11 +2,51 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+"""Family allowance case"""
+type FamilyAllowance {
+  firstName: String!
+  id: ID!
+  lastName: String!
+  status: FamilyAllowanceStatus!
+  type: FamilyAllowanceType!
+}
+
+"""Family allowance case statuses"""
+enum FamilyAllowanceStatus {
+  Approved
+  Denied
+  NeedsInfo
+  Pending
+}
+
+"""Family allowance case statuses for filtering query"""
+enum FamilyAllowanceStatusFilter {
+  All
+  Approved
+  Denied
+  NeedsInfo
+  Pending
+}
+
+"""Family allowance case types"""
+enum FamilyAllowanceType {
+  Adoption
+  Birth
+  ChildAllowance
+  TrainingAllowance
+}
+
 """greeting"""
 type Greeting {
   greeting: String!
 }
 
+type Mutation {
+  updateFamilyAllowanceStatus(id: ID!, status: FamilyAllowanceStatus!): FamilyAllowance!
+}
+
 type Query {
+  getFamilyAllowanceCase(id: ID!): FamilyAllowance!
   helloWorld: Greeting!
+  listFamilyAllowanceCases(status: FamilyAllowanceStatusFilter): [FamilyAllowance!]!
 }
