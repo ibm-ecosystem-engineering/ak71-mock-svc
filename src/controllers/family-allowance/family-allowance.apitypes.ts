@@ -1,5 +1,6 @@
-import {FamilyAllowanceModel, FamilyAllowanceStatus, FamilyAllowanceType} from "../../models";
 import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
+
+import {FamilyAllowanceModel, FamilyAllowanceStatus, FamilyAllowanceType} from "../../models";
 
 export class FamilyAllowanceInput implements Omit<FamilyAllowanceModel, 'id' | 'status'> {
     @ApiPropertyOptional()
